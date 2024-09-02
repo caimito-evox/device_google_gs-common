@@ -1,0 +1,8 @@
+#IPC between pixel and vendor HAL
+binder_call(hal_gnss_pixel, hal_gnss_default)
+
+#Read modem state
+allow hal_gnss_pixel sysfs_modem_state:file r_file_perms;
+
+#Toggle coredump node
+allow hal_gnss_pixel sysfs_gps:file rw_file_perms;
