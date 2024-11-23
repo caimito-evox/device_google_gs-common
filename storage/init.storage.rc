@@ -6,11 +6,14 @@ on default_storage_mode
     # F2FS
     write /dev/sys/fs/by-name/userdata/data_io_flag 8
     write /dev/sys/fs/by-name/userdata/node_io_flag 8
+    write /dev/sys/fs/by-name/userdata/max_io_bytes 524288
+    write /dev/sys/fs/by-name/userdata/min_hot_blocks 0
 
     # Block
     write /dev/sys/block/by-name/rootdisk/queue/iostats 1
     write /dev/sys/block/by-name/rootdisk/queue/nr_requests 128
     write /dev/sys/block/by-name/rootdisk/queue/rq_affinity 2
+    write /dev/sys/block/by-name/zoned_device/queue/rq_affinity 2
 
     # UFS
     write /dev/sys/block/bootdevice/clkgate_enable 1
@@ -27,7 +30,7 @@ on init
 
     # Block
     write /dev/sys/block/by-name/rootdisk/queue/iostats 0
-    write /sys/sys/block/by-name/rootdisk/queue/nr_requests 256
+    write /dev/sys/block/by-name/rootdisk/queue/nr_requests 256
 
     # UFS
     write /dev/sys/block/bootdevice/clkgate_enable 0

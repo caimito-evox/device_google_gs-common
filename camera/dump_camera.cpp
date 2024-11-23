@@ -42,12 +42,15 @@ int main() {
   // Attach multiple latest sessions (in case the user is running concurrent
   // sessions or starts a new session after the one with performance issues).
   dumpLogs(kCameraLogDir.data(), cameraDestDir.c_str(), 10, "session-ended-");
+  dumpLogs(kCameraLogDir.data(), cameraDestDir.c_str(), 10, "multicam-");
   dumpLogs(kCameraLogDir.data(), cameraDestDir.c_str(), 5, "high-drop-rate-");
   dumpLogs(kCameraLogDir.data(), cameraDestDir.c_str(), 5, "watchdog-");
   dumpLogs(kCameraLogDir.data(), cameraDestDir.c_str(), 5, "camera-ended-");
   dumpLogs(kCameraLogDir.data(), cameraDestDir.c_str(), 5, "fatal-error-");
   dumpLogs(kGraphStateDumpDir.data(), cameraDestDir.c_str(), 5,
            "hal_graph_state_");
+  dumpLogs(kCameraLogDir.data(), cameraDestDir.c_str(), 10,
+           "fd_state_tracker-");
 
   return 0;
 }

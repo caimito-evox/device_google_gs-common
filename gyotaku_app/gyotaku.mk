@@ -1,6 +1,5 @@
 ifneq ($(TARGET_BUILD_VARIANT), user)
-  ifeq ($(LINEAGE_BUILD),)
-  ifeq (,$(filter aosp_%, $(TARGET_PRODUCT))) # Skip aosp target product
+  ifeq (,$(filter aosp_% lineage_%, $(TARGET_PRODUCT))) # Skip aosp target product
     PRODUCT_PACKAGES_DEBUG += \
       Gyotaku
 
@@ -11,6 +10,5 @@ ifneq ($(TARGET_BUILD_VARIANT), user)
         PRODUCT_PACKAGES_DEBUG += dump_gyotaku
         BOARD_SEPOLICY_DIRS += device/google/gs-common/gyotaku_app/dump
       endif
-  endif
   endif
 endif

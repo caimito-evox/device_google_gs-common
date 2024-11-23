@@ -4,7 +4,7 @@ PRODUCT_PACKAGES += dump_aoc \
 		    aocd \
 		    aocxd
 
-ifeq (,$(filter aosp_%,$(TARGET_PRODUCT)))
+ifeq (,$(filter aosp_% lineage_%,$(TARGET_PRODUCT)))
 # IAudioMetricExt HIDL
 PRODUCT_PACKAGES += \
     vendor.google.audiometricext@1.0-service-vendor
@@ -15,11 +15,9 @@ PRODUCT_COPY_FILES += \
 	device/google/gs-common/aoc/conf/init.aoc.daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.aoc.rc
 
 # AoC debug support
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_ENG += \
 	aocdump \
 	aocutil \
 	aoc_audio_cfg \
 	vp_util \
 	aocx_tool
-endif

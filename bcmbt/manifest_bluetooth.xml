@@ -5,6 +5,16 @@
         <fqname>IBluetoothHci/default</fqname>
     </hal>
     <hal format="aidl">
+        <name>android.hardware.bluetooth.finder</name>
+        <version>1</version>
+        <fqname>IBluetoothFinder/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.bluetooth.ranging</name>
+        <version>1</version>
+        <fqname>IBluetoothChannelSounding/default</fqname>
+    </hal>
+    <hal format="aidl">
         <name>vendor.google.bluetooth_ext</name>
         <version>1</version>
         <fqname>IBTChannelAvoidance/default</fqname>

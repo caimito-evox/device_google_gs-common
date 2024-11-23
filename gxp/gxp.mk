@@ -7,9 +7,7 @@ PRODUCT_PACKAGES += \
 # GXP C-API library
 PRODUCT_PACKAGES += libgxp
 # GXP Debug dump.
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES_DEBUG += dump_gxp
-endif
+PRODUCT_PACKAGES_ENG += dump_gxp
 
 BOARD_VENDOR_SEPOLICY_DIRS += device/google/gs-common/gxp/sepolicy
 
